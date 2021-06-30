@@ -9,6 +9,7 @@ import thunkMiddleware from 'redux-thunk';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {searchRobots, requestRobots} from './containers/reducers.js';
 import {createLogger} from 'redux-logger';
+import * as serviceWorker from './serviceWorker';
 
 const logger = createLogger();
 const rootReducer = combineReducers({searchRobots, requestRobots});
@@ -23,4 +24,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+serviceWorker.register();
 reportWebVitals();

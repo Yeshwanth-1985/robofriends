@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Cardlist from '../components/cardlist';
 import Searchbox from '../components/Searchbox';
+import Header from '../components/Header';
 import Scroll from '../components/Scroll';
 import {setSearchField, requestRobots} from './actions.js';
 import './App.css';
@@ -44,13 +45,13 @@ componentDidMount() {
     :
           !filterrobots.length ?
       <div className='tc'>
-    <h1 className='f1'>Robo Friends</h1>
+    <Header />
     <Searchbox searchChange={onSearchChange}/>
       <h1 className='tc'> No Users Present </h1>
       </div>
     :
     <div className='tc'>
-    <h1 className='f1'>Robo Friends</h1>
+    <Header />
     <Searchbox searchChange={onSearchChange}/>
     <Scroll>
       <ErrorBoundary>
